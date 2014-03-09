@@ -1,0 +1,1 @@
+This folder contains notes written in LaTeX. They can be compiled by running `make` within this folder. The extra files produced in this process can be removed by running `make clean`. See `Makefile` for details.
