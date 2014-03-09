@@ -1,0 +1,9 @@
+\begin{tikzcd}[column sep=huge,row sep=huge,baseline=(current bounding box.center)]
+	\mathcal{D}
+	  \arrow[loop left]{}[name=fg]{F \circ G}
+	  \rar[start anchor=30, end anchor=151]{G}
+	  \arrow{d}[swap,name=h]{H} & 
+	\mathcal{J}\lar[start anchor=196, end anchor=-14]{F} \\
+	\mathcal{C}
+	\arrow[shorten >=3pt,Rightarrow,to path={(fg.290) to[out=-90,in=180] node[xshift=-3.5mm] {$\eta$} (h)}]{}
+\end{tikzcd}

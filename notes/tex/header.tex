@@ -1,0 +1,73 @@
+\documentclass{beamer}
+\usepackage{etex}
+
+%------------------
+% singapore - dove
+%------------------
+\usetheme{Singapore}
+\usecolortheme{dove}
+
+%------------------
+% Leinster minimal
+% see: http://www.maths.gla.ac.uk/~tl/beamer/
+%------------------
+%\usepackage{beamerseminar}
+%\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+
+%\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
+\usepackage{tikz-cd}
+\usepackage{zref-savepos}
+\usepackage{sansmathaccent}
+%\usepackage[ampersand]{easylist}
+\usepackage{verbatim}
+\usepackage{hyperref}
+
+% see
+%http://ctan.mirrorcatalogs.com/info/Free_Math_Font_Survey/survey.html#sec:Compar
+\usepackage{mathpazo}
+
+%------------------
+% packages for math
+%------------------
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\PassOptionsToPackage{all}{xy}
+\usepackage{xy}
+\usepackage{xypic}
+\xyoption{2cell}
+\UseAllTwocells
+\usepackage{bussproofs}
+
+% see http://tex.stackexchange.com/questions/27315/scale-tikzpicture-to-the-remaining-height-of-a-beamer-frame
+\newcounter{restofframe}
+\newsavebox{\restofframebox}
+\newlength{\mylowermargin}
+\setlength{\mylowermargin}{2pt}
+
+\newenvironment{restofframe}{%
+    \par%\centering
+    \stepcounter{restofframe}%
+    \zsavepos{restofframe-\arabic{restofframe}-begin}%
+    \begin{lrbox}{\restofframebox}%
+}{%
+    \end{lrbox}%
+    \setkeys{Gin}{keepaspectratio}%
+    \raisebox{\dimexpr-\height+\ht\strutbox\relax}[0pt][0pt]{%
+    \resizebox*{!}{\dimexpr\zposy{restofframe-\arabic{restofframe}-begin}sp-\zposy{restofframe-\arabic{restofframe}-end}sp-\mylowermargin\relax}%
+        {\usebox{\restofframebox}}%
+    }%
+    \vskip0pt plus 1filll\relax
+    \mbox{\zsavepos{restofframe-\arabic{restofframe}-end}}%
+    \par
+}
+
+%%
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+\setbeamercolor{block title}{fg=black,bg=gray!40}
+\setbeamercolor{block body}{fg=black,bg=gray!10}

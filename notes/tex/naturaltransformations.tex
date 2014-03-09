@@ -1,0 +1,36 @@
+Let $\mathcal{C}$ and $\mathcal{D}$ be categories, and let 
+$S,T:\mathcal{C}\to\mathcal{D}$ be covariant functors. Then suppose
+that for every object $A$ in $\mathcal{C}$ one has a morphism 
+$\eta_A :  S(A) \to T(A) $ in $\mathcal{D}$ such that for every morphism 
+$\alpha: A \to B$ in $\mathcal{C}$ the following
+$$
+\xymatrix@+=4pc{S(A) \ar[d]_{S(\alpha)} \ar[r]^{\eta_A} & T(A) \ar[d]^{T(\alpha)} \\
+S(B) \ar[r]^{\eta_{B}} & T(B)
+}
+$$
+is commutative.  Then we variously write 
+$$
+\eta: S \dot{\to} T \quad\mbox{ or }\quad \eta: S\Rightarrow T\quad \mbox{ or } \quad \eta:S\to T
+$$
+and call $\eta$ a \emph{natural trasformation} from $S$ to $T$.
+
+One may think of a natural transformation $\eta:S\to T$ as a `function' from the class of objects of $\mathcal{C}$ to the class of morphisms of $\mathcal{D}$.
+
+As a first example, for every functor $S:\mathcal{C}\to \mathcal{D}$, we can associate the natural transformation $1_S: S\to S$ (the \emph{identity natural transformation} on $S$) that assigns every object $A$ of $\mathcal{C}$, the corresponding identity morphism $1_{S(A)}$.
+
+Natural transformations are composed in a similar manner to morphisms, but they are nevertheless defined as correspondences between both objects and morphisms as shown in the square commutative diagram depicted above. 
+
+More precisely, given three functors $R,S,T:\mathcal{C}\to \mathcal{D}$, and two natural transformations, $\tau:R\to S$ and $\eta:S\to T$, we define the composition of $\tau$ with $\eta$, written $\eta \bullet \tau$, as a class of morphisms in $\mathcal{D}$ given by 
+$$(\eta\bullet \tau)_A := \eta_A\circ \tau_A,$$ for every object $A$ in $\mathcal{C}$.
+It is easy to see that $\eta\bullet \tau$ is a natural transformation, since we may ``compose'' two commutative squares and obtain a third one:
+$$
+\xymatrix@+=4pc{R(A) \ar[d]_{R(\alpha)} \ar[r]^{\tau_A}  & S(A) \ar[d]_{S(\alpha)} \ar[r]^{\eta_A} & T(A) \ar[d]^{T(\alpha)} \ar@{}[dr]|{=} &  
+R(A) \ar[d]_{R(\alpha)} \ar[r]^{\eta_A \circ \tau_A} & T(A) \ar[d]^{T(\alpha)} 
+\\
+R(B) \ar[r]^{\tau_{B}} & S(B) \ar[r]^{\eta_{B}} & T(B) & 
+R(B) \ar[r]^{\eta_B \circ \tau_B} & T(B)
+}
+$$
+It is easy to see that the composition ``operation'' on natural transformations is associative:
+$$(\zeta\bullet \eta)\bullet \tau = \zeta\bullet (\eta \bullet \tau)$$
+for natural transformations $\tau:R\to S$, $\eta:S\to T$, and $\zeta:T\to U$.  In addition, any identity natural transformation acts as a compositional identity: if $\tau:R\to S$ and $\eta:S\to T$, then $$1_S\bullet \tau=\tau \qquad\mbox{ and }\qquad \eta \bullet 1_S = \eta.$$

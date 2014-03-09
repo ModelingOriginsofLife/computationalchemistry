@@ -1,0 +1,22 @@
+Let $\mathcal{C}$ and $\mathcal{D}$ be (small) categories, and let $T:\mathcal{C} \to \mathcal{D}$ and $S:\mathcal{D} \to \mathcal{C}$ be covariant functors. $T$ is said to be a \emph{left adjoint functor} to $S$ (equivalently, $S$ is a \emph{right adjoint functor} to $T$) if there is a natural equivalence
+\[
+\nu\colon \Hom_{\mathcal{D}}(T(-),-) \overset{\cdot}{\longrightarrow} \Hom_{\mathcal{C}}(-,S(-)).
+\]
+Here the functor $\Hom_{\mathcal{D}}(T(-),-)$ is a bifunctor $\mathcal{C}\times\mathcal{D}\to\mathbf{Set}$ which is contravariant in the first variable, is covariant in the second variable, and sends an object $(C,D)$ to $\Hom_{\mathcal{D}}(T(C),D)$.  The functor $\Hom_{\mathcal{C}}(-,S(-))$ is defined analogously.
+
+This definition needs additional explanation.  Essentially, it says that for every object $C$ in $\cal{C}$ and every object $D$ in $\cal{D}$ there is a function 
+\[
+\nu_{C,D} \colon \Hom_{\mathcal{D}}(T(C),D) \overset{\sim}{\longrightarrow} \Hom_{\mathcal{C}}(C,S(D)) 
+\]
+which is a natural bijection of hom-sets.  Naturality means that if $f\colon C'\to C$ is a morphism in $\mathcal{C}$ and $g\colon D\to D'$ is a morphism in $\mathcal{D}$, then the diagram
+\[\xymatrix{
+\Hom_{\mathcal{D}}(T(C),D)\ar[dd]_{(Tf,g)}\ar[rr]^{\nu_{C,D}} &&
+\Hom_{\mathcal{C}}(C,S(D))\ar[dd]^{(f,Sg)} \\ && \\
+\Hom_{\mathcal{D}}(T(C'),D')\ar[rr]^{\nu_{C',D'}} &&
+\Hom_{\mathcal{C}}(C',S(D')) \\
+}\] 
+is a commutative diagram.  If we pick any $h:T(C)\to D$, then we have the equation $$Sg\circ \nu_{C,D}(h)\circ f= \nu_{C',D'}(g\circ h\circ Tf).$$
+
+If $T:\mathcal{C}\to\mathcal{D}$ is a left adjoint of $S:\mathcal{D}\to \mathcal{C}$, then we say that the ordered pair $(T,S)$ is an \emph{adjoint pair}, and the ordered triple $(T,S,\nu)$ an \emph{adjunction} from $\mathcal{C}$ to $\mathcal{D}$, written $$(T,S,\nu):\mathcal{C}\to \mathcal{D},$$ where $\nu$ is the natural equivalence defined above.  
+
+An adjoint to a functor is in some ways like an inverse (as in the case of an adjoint matrix); often formal properties about a functor lead to formal properties of its adjoint (for example the right adjoint to a left-exact functor takes injectives to injectives).  An adjoint to any functor is unique up to natural isomorphism.

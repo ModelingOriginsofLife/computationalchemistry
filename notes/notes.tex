@@ -1,0 +1,78 @@
+\input{plos_header.tex}
+
+\begin{document}
+
+% Add Figure, Table prefixes to references
+% http://tex.stackexchange.com/a/6063/6784
+\let\ref\autoref
+
+% Table of contents
+% http://tex.stackexchange.com/a/7357/6784
+%\pagebreak
+\pagenumbering{gobble}
+\tableofcontents
+\listoffigures
+%\listoftables
+\pagebreak
+\pagenumbering{arabic}
+
+% Title must be 150 characters or less
+\input{tex/titleinfo.tex}
+
+\listoftodos
+
+% Please keep the abstract between 250 and 300 words
+%\section{Abstract}
+%\input{tex/abstract.tex}
+
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLoS ONE authors please skip this step.
+% Author Summary not valid for PLoS ONE submissions.
+%\section{Author Summary}
+
+%\input{tex/todonoteinstructions}
+
+%\section{Introduction}
+%\input{tex/introduction.tex}
+
+% Results and Discussion can be combined.
+
+%\section{Functional closure}
+\input{tex/lambdaccc.tex}
+\input{tex/untyped.tex}
+
+%\section{Discussion}
+%\input{tex/discussion.tex}
+
+% Do NOT remove this, even if you are not including acknowledgments
+\section{Acknowledgments}
+The authors would like to thank Jay Sulzberger and Noson Yanofsky for helpful discussions.
+
+%\section{References}
+% The bibtex filename
+\bibliography{bib/books,bib/papers}
+\pagebreak
+% You may title this section "Methods" or "Models".
+% "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
+% authors may use "Analysis"
+
+\section{Background}
+\subsection{Categories}\todo{Some of this section is ``textbook'' material taken from planetmath.org. It is a helpful reference to definitions for reviewers.}
+\input{tex/intuition.tex}
+\input{tex/category.tex}
+%
+\subsection{Cartesian closed category}
+\input{tex/cartesianclosedcat.tex}
+%
+\subsection{Monoidal categories}
+\input{tex/monoidalcategory.tex}
+%
+\subsection{Symmetric monoidal categories}
+\input{tex/symmetricmonoidalcategory.tex}
+
+%\section{Figure Legends}
+
+%\section{Tables}
+
+\end{document}
+
