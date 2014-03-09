@@ -49,7 +49,7 @@ $(TOPPDFFILE): $(TOPTEX) $(BIBFILES) $(TEMPLATE)
 
 clean:
 	rm -f *.aux *.bbl *.blg *.brf *.dvi *.fdb_latexmk *.fls *.lof *.log \
-	      *.lot *.nav *.out *.pre *.snm *.synctex.gz *.toc
+	      *.lot *.nav *.out *.pre *.snm *.synctex.gz *.tdo *.toc
 
 cleanall: clean
 	rm -f $(TOPPDFFILE)
